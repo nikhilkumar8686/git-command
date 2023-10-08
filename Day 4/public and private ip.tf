@@ -37,7 +37,7 @@ resource "azurerm_public_ip" "testpublic-ip" {
   allocation_method   = "Static"
   
   }
-  
+  #network interface is nothing but private ip
 resource "azurerm_network_interface" "main" {
 #network interface is nothing but private ip
 
