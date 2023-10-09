@@ -61,8 +61,10 @@ resource "azurerm_network_interface" "main" {
 }
 
 output "public_ip_address_id" {
- value =azurerm_public_ip.testpublic-ip
+ value =azurerm_public_ip.testpublic.ip_address
  }
  output "private_ip_address_id" {
- value =azurerm_network_interface.main
+ value =azurerm_network_interface.main.ip_configuration[0].private_ip_address
+ #ip_configuration[0] , braces used b.coz ip_configuration is list and wanted to print only first ip
+ # use loop to print multiple values
  }
