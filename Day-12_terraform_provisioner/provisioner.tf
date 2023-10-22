@@ -110,7 +110,7 @@ connection {
   inline =[
   "ls -a",
   "chmod 777 New_Text_Document.txt",
-  "cat New_Text_Document"]
+  "cat New_Text_Document.txt"]
 }
 provisioner "local-exec"{
 command ="echo ${azurerm_public_ip.pip-PRO.ip_address} >>temp.txt"
