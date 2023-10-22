@@ -35,7 +35,7 @@ resource "azurerm_public_ip" "pip-PRO" {
   name                    = "test-pip"
   location                = azurerm_resource_group.RG_PRO.location
   resource_group_name     = azurerm_resource_group.RG_PRO.name
-  allocation_method       = "Dynamic"
+  allocation_method       = "static"
   idle_timeout_in_minutes = 30
 
   tags = {
@@ -113,7 +113,7 @@ connection {
   "cat New_Text_Document"]
 }
 provisioner "local-exec"{
-command ="echo${azurerm_public_ip.pip-PRO.ip_address} >>temp.txt"
+command ="echo ${azurerm_public_ip.pip-PRO.ip_address} >>temp.txt"
 }
 }
 output "public_ip_address_id"{
