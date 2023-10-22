@@ -95,8 +95,8 @@ connection {
     password = "*Nikhil1"
     
   }
-  source      = "New_Text_Document"
-  destination = "New_Text_Document"
+  source      = "New_Text_Document.txt"
+  destination = "New_Text_Document.txt"
   
 }
 provisioner "remote-exec" {
@@ -109,7 +109,7 @@ connection {
   }
   inline =[
   "ls -a",
-  "chmod 777 New_Text_Document",
+  "chmod 777 New_Text_Document.txt",
   "cat New_Text_Document"]
 }
 provisioner "local-exec"{
